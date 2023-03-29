@@ -5,34 +5,19 @@ version of [Neovim](https://neovim.io) from GitHub.
 
 ## Requirements
 
-- Go
-- make
+- [PowerShell](https://github.com/PowerShell/PowerShell)
 - [Scoop](https://scoop.sh)
 
 ## Usage
 
 ```console
-$ make
-$ .\build-manifest.exe
-$ scoop install .\neovim-nightly.json
+PS> pwsh .\build-manifest.ps1 -Version "$version"
+PS> scoop install .\neovim-nightly.json
 ```
 
-### Overriding manifest filename
+## Parameters
 
-By default, a `neovim-nightly.json` file will be generated but it can be
-overridden by specifying `-output <path>`. For example:
-
-```console
-$ .\build-manifest.exe -output neovim.json
-$ scoop install neovim.json
-```
-
-### Overriding manifest version
-
-The [Makefile](./Makefile) contains a `VERSION` flag that's used to populate
-the `Version` key in the generated manifest. To override this value, either
-update the value in the Makefile or specify it while running `make`, for example:
-
-```console
-$ make VERSION=0.9.0-dev
-```
+| **Name**      | **Required** | **Description**             | **Default Value**     |
+|:--------------|:-------------|:----------------------------|:----------------------|
+| `-Version`    | YES          | Specify application version | N/A                   |
+| `-OutputFile` | NO           | Specify manifest filename   | `neovim-nightly.json` |
