@@ -11,7 +11,7 @@ version of [Neovim](https://neovim.io) from GitHub.
 ## Usage
 
 ```console
-PS> pwsh .\build-manifest.ps1 -Version "$version"
+PS> pwsh .\generate-manifest.ps1 -Version "$version"
 PS> scoop install .\neovim-nightly.json
 ```
 
