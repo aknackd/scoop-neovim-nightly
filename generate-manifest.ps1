@@ -102,14 +102,7 @@ function Generate-Scoop-Manifest () {
     },
     "extract_dir": "nvim-win64",
     "bin": [
-        "bin\\nvim.exe",
-        "bin\\nvim-qt.exe"
-    ],
-    "shortcuts": [
-        [
-            "bin\\nvim-qt.exe",
-            "Neovim"
-        ]
+        "bin\\nvim.exe"
     ],
     "checkver": {
         "github": "https://github.com/neovim/neovim"
