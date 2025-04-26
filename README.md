@@ -15,6 +15,12 @@ PS> pwsh .\generate-manifest.ps1 -Version "$version"
 PS> scoop install .\neovim-nightly.json
 ```
 
+To update neovim, simply execute the `generate-manifest.ps1` script again and run:
+
+```console
+PS> scoop update neovim-nightly --force
+```
+
 ## Parameters
 
 | **Name**      | **Required** | **Description**             | **Default Value**     |
