@@ -40,7 +40,7 @@ function Fetch-Nightly-Release-Checksum () {
     Write-Host "Fetching nightly release checksum"
 
     $checksumUrl = `
-        "https://github.com/neovim/neovim/releases/download/nightly/nvim-win64.zip.sha256sum"
+        "https://github.com/neovim/neovim/releases/download/nightly/shasum.txt"
 
     try {
         $response = Invoke-WebRequest `
@@ -51,7 +51,7 @@ function Fetch-Nightly-Release-Checksum () {
             -Uri $checksumUrl
 
         if ($response.StatusCode -eq 200) {
-            $contents = ([System.Text.Encoding]::UTF8.GetString($response.Content) -split "\n")[0]
+            $contents = ([System.Text.Encoding]::UTF8.GetString($response.Content) -split "\n") | Select-String "nvim-win64.zip"
 
             return ($contents -split "  ")[0]
         } else {
